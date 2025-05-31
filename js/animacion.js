@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     setInterval(cambiarProfesion, 2200);
 
-    // Botón de contacto con modal
     const contactoBtn = document.getElementById("contactoBtn");
     const contactoModal = document.getElementById("contactoModal");
     const cerrarModal = document.getElementById("cerrarModal");
@@ -28,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
         contactoModal.style.display = "none";
     });
 
-    // Opcional: cerrar el modal si se hace clic fuera del contenido
     contactoModal.addEventListener("click", (e) => {
         if (e.target === contactoModal) {
             contactoModal.style.display = "none";
