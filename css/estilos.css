@@ -96,12 +96,18 @@ body {
 }
 
 .modal-contenido {
-    background-color: #fff;
+    /*background-color: #fff;*/
+    background: linear-gradient(120deg, #2980b9, #6dd5fa, #ffffff);
+    /*background: linear-gradient(120deg, #ffffff,#6dd5fa, #2980b9);*/
     padding: 20px;
     border-radius: 10px;
     width: 80%;
     max-width: 400px;
     position: relative;
+}
+
+p contacto {
+    justify-content: center;
 }
 
 .modal-cerrar {
