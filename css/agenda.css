@@ -1,0 +1,290 @@
+:root {
+    /*--color-trabajo: #4CAF50;*/
+    --color-trabajo: #1E3A8A;
+    --color-personal: #87CEEB;
+    --color-urgente: #FF0000;
+    --color-texto: #333;
+    --color-fondo: #f9f9f9;
+   /* --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);*/
+    --sombra: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Formulario */
+.form {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-row .form-group {
+    flex: 1 1 200px; /* mínimo 200px, el resto se ajusta */
+    min-width: 200px;
+}
+
+.btn {
+    background: var(--color-trabajo);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #45a049;
+}
+
+/* Lista de Tareas */
+.task-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+
+/*.tarea {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    /*box-shadow: var(--sombra);*/
+    /*box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+}*/
+
+.tarea {
+    background: white;
+    padding: 15px 15px 50px 15px; /* espacio inferior extra para el botón */
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+}
+
+
+
+.tarea-titulo {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    padding-right: 80px;
+}
+
+.tarea-descripcion {
+    color: #666;
+    margin-bottom: 15px;
+    min-height: 60px;
+}
+
+.tarea-fecha {
+    display: flex;
+    gap: 15px;
+    color: #555;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+/* Categoría - Posición fija */
+.categoria {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white !important;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+/*.categoria {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-size: 11px;
+    padding: 4px 10px;
+}*/
+
+
+.categoria-trabajo { background: var(--color-trabajo); }
+.categoria-personal { background: var(--color-personal); }
+.categoria-urgente { background: var(--color-urgente); }
+
+/* Botón Eliminar */
+.btn-eliminar {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    animation: fadeIn 0.3s;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Errores */
+.error-container {
+    background-color: #ffebee;
+    border-left: 4px solid #f44336;
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+}
+
+.error-item {
+    color: #d32f2f;
+    margin: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.error-item::before {
+    content: "⚠️";
+    font-size: 14px;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-row {
+        /*flex-direction: column;*/
+        flex-direction: row;
+        gap: 8px; /* Menor separación vertical */
+    }
+
+    .form-group {
+        margin-bottom: 8px; /* Reduce espacio entre campos */
+    }
+
+    .tarea {
+        padding-right: 20px;
+    }
+
+    .categoria {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 10px;
+        display: inline-block;
+    }
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #323232;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 2000;
+    max-width: 300px;
+    font-size: 15px;
+}
+
+.toast.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}

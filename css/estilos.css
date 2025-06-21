@@ -52,16 +52,30 @@ body {
 
 .enlace {
     display: inline-block;
-    padding: 12px 25px;
+    /*padding: 12px 25px;*/
     color: white;
     text-decoration: none;
-    border-radius: 25px;
+    /*border-radius: 25px;*/
     font-family: 'Segoe UI', sans-serif;
     font-weight: 500;
     background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    border-radius: 4px;
+
 }
+/*
+.enlace {
+    text-decoration: none;
+    color: #2196F3;
+    font-weight: 500;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}*/
 
 .enlace:hover {
     transform: translateY(-2px);
@@ -114,3 +128,24 @@ p.contacto {
     text-decoration: underline;
     transition: color 3s ease;
 }
+
+.enlaces {
+    display: inline-flex;
+    gap: 16px;
+    flex-wrap: wrap; /* Por si se achica en móvil */
+}
+/*
+.enlace {
+    text-decoration: none;
+    color: #2196F3;
+    font-weight: 500;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.enlace:hover {
+    background-color: #e3f2fd;
+    border-color: #90caf9;
+}*/

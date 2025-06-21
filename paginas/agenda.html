@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Profesional</title>
+    <link rel="stylesheet" href="/css/agenda.css">
+</head>
+<body>
+    <main class="container">
+        <h1>📅 Agenda de Tareas</h1>
+        
+        <!-- Formulario -->
+        <form id="form-tarea" class="form">
+            <div id="error-container" class="error-container"></div>
+            
+            <div class="form-group">
+                <label for="titulo">Título*</label>
+                <input type="text" id="titulo" placeholder="Reunión con equipo">
+            </div>
+            
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" placeholder="Detalles de la tarea..."></textarea>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fecha">Fecha*</label>
+                    <input type="date" id="fecha">
+                </div>
+                
+                <div class="form-group">
+                    <label for="hora">Hora*</label>
+                    <input type="time" id="hora">
+                </div>
+                
+                <div class="form-group">
+                    <label for="categoria">Categoría*</label>
+                    <select id="categoria">
+                        <option value="trabajo">Trabajo</option>
+                        <option value="personal">Personal</option>
+                        <option value="urgente">Urgente</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn">Agregar Tarea</button>
+        </form>
+        
+        <!-- Lista de Tareas -->
+        <section id="lista-tareas" class="task-list"></section>
+        
+        <!-- Modal de Confirmación -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>✅ Tarea Agregada</h3>
+                <p><strong>Título:</strong> <span id="modal-titulo"></span></p>
+                <p><strong>Fecha/Hora:</strong> <span id="modal-fecha"></span></p>
+                <p><strong>Categoría:</strong> <span id="modal-categoria"></span></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/agenda.js" defer></script>
+<div id="toast" class="toast"></div>
+
+</body>
+</html>
