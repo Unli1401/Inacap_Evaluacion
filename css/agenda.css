@@ -288,3 +288,20 @@ textarea {
     opacity: 1;
     transform: translateY(0);
 }
+
+.back {
+    margin-left: 50px;
+    cursor: pointer;
+    background-color: rgba(75, 85, 99);
+    color: white;
+    border-radius: .375rem;
+    font-weight: 500;
+    font-size: .775rem;
+}
+
+.back:hover {
+    background-color: lightgray;
+    font-weight: 100;
+    letter-spacing: 1px;
+    color:black;
+}
