@@ -5,8 +5,54 @@
     --color-urgente: #FF0000;
     --color-texto: #333;
     --color-fondo: #f9f9f9;
-   /* --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);*/
+    /* --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);*/
     --sombra: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    --sombra_btn: 10px 10px 11px 0px rgba(57, 56, 56, 0.75);
+}
+/*
+.back {
+    margin-left: 50px;
+    cursor: pointer;
+    background-color: rgba(75, 85, 99);
+    color: white;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 16px;
+    transition: background-color 0.3s, color 0.3s, font-weight 0.3s, letter-spacing 0.3s;
+    text-decoration: none;
+    /* Asegura que no tenga subrayado */
+    /*display: inline-block;
+    /* Para que el padding funcione correctamente *//*
+    box-shadow: var(--sombra);
+}*/
+
+.back {
+    /*padding: 8px 16px;*/
+    font-size: 14px;
+    background-color: var(--color-trabajo);
+    color: white;
+    border: red;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 60px;
+    letter-spacing: 1px;
+    /* Asegura que no sea ancho completo */
+    display: inline-block;
+    text-align: match-parent;
+    /*margin-left: 50px;*/
+    box-shadow: var(--sombra_btn);
+}
+
+
+
+.back:hover {
+    
+    font-weight: 100;
+    letter-spacing: 1px;
+    /*color: black;*/
+    background: #45a049;
+    transition: background 0.3s;
 }
 
 body {
@@ -38,7 +84,9 @@ label {
     font-weight: 600;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -59,7 +107,8 @@ textarea {
 }
 
 .form-row .form-group {
-    flex: 1 1 200px; /* mínimo 200px, el resto se ajusta */
+    flex: 1 1 200px;
+    /* mínimo 200px, el resto se ajusta */
     min-width: 200px;
 }
 
@@ -72,6 +121,7 @@ textarea {
     cursor: pointer;
     font-size: 16px;
     transition: background 0.3s;
+    box-shadow: var(--sombra_btn)  ;
 }
 
 .btn:hover {
@@ -91,7 +141,7 @@ textarea {
     padding: 15px;
     border-radius: 10px;
     /*box-shadow: var(--sombra);*/
-    /*box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+/*box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     position: relative;
@@ -103,7 +153,8 @@ textarea {
 
 .tarea {
     background: white;
-    padding: 15px 15px 50px 15px; /* espacio inferior extra para el botón */
+    padding: 15px 15px 50px 15px;
+    /* espacio inferior extra para el botón */
     border-radius: 10px;
     box-shadow: var(--sombra);
     position: relative;
@@ -147,7 +198,7 @@ textarea {
     font-weight: bold;
     color: white !important;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1;
 }
 
@@ -162,9 +213,17 @@ textarea {
 }*/
 
 
-.categoria-trabajo { background: var(--color-trabajo); }
-.categoria-personal { background: var(--color-personal); }
-.categoria-urgente { background: var(--color-urgente); }
+.categoria-trabajo {
+    background: var(--color-trabajo);
+}
+
+.categoria-personal {
+    background: var(--color-personal);
+}
+
+.categoria-urgente {
+    background: var(--color-urgente);
+}
 
 /* Botón Eliminar */
 .btn-eliminar {
@@ -237,8 +296,15 @@ textarea {
 
 /* Animaciones */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive */
@@ -246,11 +312,13 @@ textarea {
     .form-row {
         /*flex-direction: column;*/
         flex-direction: row;
-        gap: 8px; /* Menor separación vertical */
+        gap: 8px;
+        /* Menor separación vertical */
     }
 
     .form-group {
-        margin-bottom: 8px; /* Reduce espacio entre campos */
+        margin-bottom: 8px;
+        /* Reduce espacio entre campos */
     }
 
     .tarea {
@@ -287,21 +355,4 @@ textarea {
 .toast.mostrar {
     opacity: 1;
     transform: translateY(0);
-}
-
-.back {
-    margin-left: 50px;
-    cursor: pointer;
-    background-color: rgba(75, 85, 99);
-    color: white;
-    border-radius: .375rem;
-    font-weight: 500;
-    font-size: .775rem;
-}
-
-.back:hover {
-    background-color: lightgray;
-    font-weight: 100;
-    letter-spacing: 1px;
-    color:black;
 }

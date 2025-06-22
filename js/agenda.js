@@ -127,17 +127,28 @@ document.addEventListener('DOMContentLoaded', function() {
         modalTitulo.textContent = tarea.titulo;
         modalFecha.textContent = `${formatearFecha(tarea.fecha)} a las ${tarea.hora}`;
         modalCategoria.textContent = tarea.categoria.toUpperCase();
-        
+
+        // Reinicia la visibilidad
         modal.style.display = 'flex';
-        
+        modal.style.opacity = '1';
+
+        // Cierra automáticamente después de 5 segundos
         setTimeout(() => {
             modal.style.opacity = '0';
-            setTimeout(() => modal.style.display = 'none', 300);
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
         }, 5000);
     }
 
-    // Nuevo: mostrar el toast
-    mostrarToast(`✅ Tarea '${nuevaTarea.titulo}' registrada para ${formatearFecha(nuevaTarea.fecha)} a las ${nuevaTarea.hora}`);
+    // ✅✅✅ AGREGADO: permitir cerrar el modal manualmente con la X
+    document.querySelector('.close-modal').addEventListener('click', () => {
+        modal.style.opacity = '0';
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300);
+    });
+    // ✅✅✅ FIN BLOQUE AGREGADO
 
     // Formatear fecha
     function formatearFecha(fechaStr) {
