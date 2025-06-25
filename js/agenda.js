@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalFecha = document.getElementById('modal-fecha');
     const modalCategoria = document.getElementById('modal-categoria');
 
-    // Cargar tareas desde localStorage
+    // Cargar tareas desde localStorage (almacena en el navegador)
     let tareas = JSON.parse(localStorage.getItem('tareas')) || [];
     mostrarTareas();
 
@@ -141,14 +141,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
 
-    // ✅✅✅ AGREGADO: permitir cerrar el modal manualmente con la X
+    // permitir cerrar el modal manualmente con la X
     document.querySelector('.close-modal').addEventListener('click', () => {
         modal.style.opacity = '0';
         setTimeout(() => {
             modal.style.display = 'none';
         }, 300);
     });
-    // ✅✅✅ FIN BLOQUE AGREGADO
 
     // Formatear fecha
     function formatearFecha(fechaStr) {
