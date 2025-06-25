@@ -1,7 +1,7 @@
 :root {
     /*--color-trabajo: #4CAF50;*/
     --color-trabajo: #1E3A8A;
-    --color-personal: #87CEEB;
+    --color-personal: #2f97c0;
     --color-urgente: #FF0000;
     --color-texto: #333;
     --color-fondo: #f9f9f9;
@@ -76,6 +76,7 @@ body {
 
 .form-group {
     margin-bottom: 15px;
+    
 }
 
 label {
